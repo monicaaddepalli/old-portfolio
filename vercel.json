@@ -1,0 +1,34 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "redirects": [
+    {
+      "source": "/blog/design-system-component",
+      "destination": "/notes/ds-component",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ds-component",
+      "destination": "/notes/ds-component",
+      "permanent": true
+    },
+    {
+      "source": "/blog/responsive-typographic-system",
+      "destination": "/notes/responsive-typographic-system",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
